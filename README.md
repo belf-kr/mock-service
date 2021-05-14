@@ -13,7 +13,7 @@
 공식도구인 `@nestjs/cli` 를 사용했습니다.
 
 ```shell
-nest new api-gateway
+nest new mock-service
 ```
 
 ## pipeline
