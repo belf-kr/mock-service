@@ -18,7 +18,7 @@ nest new mock-service
 
 ## pipeline
 
-### origin인 `front-server` 와 다른점
+### origin인 `mock-service` 와 다른점
 
 내부망에서 돌기 때문에 아래의 선언이 삭제되었습니다.  
 즉, `ingress-basic` ns와 관련있는 리소스가 남아있으면 안됩니다.

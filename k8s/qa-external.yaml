@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: external-qa-front-server
+  name: external-qa-mock-service
   namespace: ingress-basic
 spec:
   type: ExternalName
-  externalName: front-server.qa
+  externalName: mock-service.qa
