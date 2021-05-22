@@ -1,35 +1,28 @@
 import { Injectable } from "@nestjs/common";
 import { randomColor, randomId, randomInt0to10 } from "./common/common.function";
-import { Glass, Todos } from "./common/common.interface";
-
-export interface HelloRes {
-  value1: string;
-}
+import { IGlass, IGlasses, ITodos } from "./common/common.interface copy";
 
 @Injectable()
 export class AppService {
-  getHello(): HelloRes {
-    return {
-      value1: "mock 데이터 qa에서 수정",
-    };
-  }
-
-  getGlasses(userId: string): Glass[] {
+  getGlasses(userId: string): IGlasses {
     console.log(`getGlasses : ${userId}`);
-    const result: Glass[] = [];
+    const result: IGlass[] = [];
     const now = new Date();
-    for (let index = 0; index < 24 * 7; index++) {
+    const size = 23 * 7 + (new Date().getDay() + 1);
+    for (let index = 0; index < size; index++) {
       const date = new Date();
-      const g: Glass = {
+      const g: IGlass = {
         date: new Date(date.setDate(now.getDate() - index)).getTime(),
         count: randomInt0to10(),
       };
       result.push(g);
     }
-    return result.reverse();
+    return {
+      glass_list: result.reverse(),
+    };
   }
 
-  getTodayTodos(userId: string): Todos {
+  getTodayTodos(userId: string): ITodos {
     console.log(`getTodayTodos : ${userId}`);
     return {
       todo_list: [
