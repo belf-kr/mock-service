@@ -18,7 +18,7 @@ export class AppController {
 
   @Get(":userId/glass")
   getGlasses(@Param() param) {
-    return this.appService.getGlasses(param.userId);
+    return this.appService.getPlantingGlass(param.userId);
   }
 
   @Get(":userId/today-todos")
