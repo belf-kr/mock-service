@@ -1,10 +1,10 @@
 import { Injectable } from "@nestjs/common";
 import { randomColor, randomId, randomInt0to10 } from "./common/common.function";
 import { IGlass, IGlasses, ITodos } from "./common/common.interface copy";
-
+import { IServiceEndpoing } from "./common/common.service-interface";
 @Injectable()
-export class AppService {
-  getGlasses(userId: string): IGlasses {
+export class AppService implements IServiceEndpoing {
+  async getPlantingGlass(userId: string): Promise<IGlasses> {
     console.log(`getGlasses : ${userId}`);
     const result: IGlass[] = [];
     const now = new Date();
@@ -22,7 +22,7 @@ export class AppService {
     };
   }
 
-  getTodayTodos(userId: string): ITodos {
+  async getTodayTodos(userId: string): Promise<ITodos> {
     console.log(`getTodayTodos : ${userId}`);
     return {
       todo_list: [
