@@ -1,0 +1,7 @@
+@Host = http://localhost:3000
+
+### 오늘 하루 todo list 조회
+GET {{Host}}/1/today-todos
+
+### 잔디밭 조회
+GET {{Host}}/2/glass
