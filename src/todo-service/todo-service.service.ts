@@ -1,15 +1,5 @@
 import { Injectable } from "@nestjs/common";
 
-/**
- * MOCK 서비스 및 TODO 서비스의 구현해야할 함수 목록입니다.
- */
-export interface IServiceEndpoint {
-  // 요약정보 가져오기(잔디)
-  getPlantingGlass(userId: string): Promise<IGlasses>;
-  // 오늘 할 일 가져오기
-  getTodayTodos(userId: string): Promise<ITodos>;
-}
-
 function randomId() {
   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
     const r = (Math.random() * 16) | 0,
@@ -24,32 +14,35 @@ function randomInt0to10() {
   return Math.floor(Math.random() * 10);
 }
 
-export interface IServiceInfo {
-  httpStatus: number;
-  version: string;
-  name: string;
-  port: number;
-  error_code?: number;
-}
-
-export interface IGlass {
+type IGlass = {
   date: number;
   count: number;
-}
-
-export interface IGlasses {
+};
+type IGlasses = {
   glass_list: IGlass[];
-}
+};
 
-export interface ITodo {
+type ITodo = {
   reminder_id: string;
   reminder_title: string;
   course_title: string;
   color: string;
-}
-
-export interface ITodos {
+};
+type ITodos = {
   todo_list: ITodo[];
+};
+
+interface IServiceEndpoint {
+  /**
+   * 요약정보 가져오기(잔디)
+   * @param userId
+   */
+  getPlantingGlass(userId: string): Promise<IGlasses>;
+  /**
+   * 오늘 할 일 가져오기
+   * @param userId
+   */
+  getTodayTodos(userId: string): Promise<ITodos>;
 }
 
 @Injectable()
