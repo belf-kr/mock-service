@@ -13,7 +13,7 @@ export class AppController {
   }
 
   @Get("ping")
-  sendStatusOK(@Res() res: Response): void {
+  getPing(@Res() res: Response): void {
     res.sendStatus(HttpStatus.OK);
   }
 
