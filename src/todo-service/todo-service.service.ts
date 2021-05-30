@@ -47,8 +47,7 @@ interface IServiceEndpoint {
 
 @Injectable()
 export class TodoServiceService implements IServiceEndpoint {
-  async getPlantingGlass(userId: string): Promise<Glasses> {
-    console.log(`getPlantingGlass: ${userId}`);
+  async getPlantingGlass(): Promise<Glasses> {
     const result: Glass[] = [];
     const now = new Date();
     const size = 23 * 7 + (new Date().getDay() + 1);
@@ -65,8 +64,7 @@ export class TodoServiceService implements IServiceEndpoint {
     };
   }
 
-  async getTodayTodos(userId: string): Promise<Todos> {
-    console.log(`getTodayTodos: ${userId}`);
+  async getTodayTodos(): Promise<Todos> {
     return {
       todo_list: [
         {
