@@ -4,7 +4,11 @@ import { TodoServiceService } from "./todo-service.service";
 
 @Controller("todo-service")
 export class TodoServiceController {
-  constructor(private readonly appService: TodoServiceService) {}
+  private readonly appService: TodoServiceService;
+
+  constructor(appService: TodoServiceService) {
+    this.appService = appService;
+  }
 
   @Get("today-todos")
   getTodayTodos() {
