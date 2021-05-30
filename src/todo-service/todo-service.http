@@ -2,7 +2,7 @@
 @Router = todo-service
 
 ### 오늘 하루 todo list 조회
-GET {{Host}}/{{Router}}/1/today-todos
+GET {{Host}}/{{Router}}/today-todos
 
 ### 잔디밭 조회
-GET {{Host}}/{{Router}}/2/glass
+GET {{Host}}/{{Router}}/glass
