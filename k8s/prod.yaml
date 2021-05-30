@@ -16,6 +16,7 @@ spec:
       containers:
         - name: mock-service
           image: ghcr.io/belf-kr/mock-service/nestjs
+          imagePullPolicy: "Always"
           ports:
             - containerPort: 3000
 ---
