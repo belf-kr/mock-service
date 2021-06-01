@@ -8,7 +8,7 @@ export interface HelloRes {
 export class AppService {
   getHello(): HelloRes {
     return {
-      value1: "mock 데이터",
+      value1: "mock 데이터 qa에서 수정",
     };
   }
 }
