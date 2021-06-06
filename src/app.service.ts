@@ -1,14 +1,18 @@
 import { Injectable } from "@nestjs/common";
 
-export interface HelloRes {
-  value1: string;
-}
+import { name, version } from "../package.json";
 
 @Injectable()
 export class AppService {
-  getHello(): HelloRes {
-    return {
-      value1: "mock 데이터 qa에서 수정",
-    };
+  getHello(): string {
+    return name;
+  }
+
+  getVersion(): string {
+    return version;
+  }
+
+  getEnv(): NodeJS.ProcessEnv {
+    return process.env;
   }
 }

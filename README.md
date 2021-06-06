@@ -1,27 +1,17 @@
 # mock-service
 
-더미 데이터를 뿌려주자
+미완성된 service를 대신하여 더미 데이터를 제공하는 서비스를 제공합니다.
+
+1. 더미 데이터는 완성된 service와 동일한 interface로 제공됩니다.
+1. 덕분에 api-gateway에서 필요에 따라 실제 service와 더미 데이터를 자유롭게 스위칭 할 수 있습니다.
 
 # Stack
 
 1. node:v14.16.1
+1. vscode
+1. nest.js
+1. docker
 
-# History
+# 빠른 시작
 
-## 프로젝트 생성 방법
-
-공식도구인 `@nestjs/cli` 를 사용했습니다.
-
-```shell
-nest new mock-service
-```
-
-## pipeline
-
-### origin인 `mock-service` 와 다른점
-
-내부망에서 돌기 때문에 아래의 선언이 삭제되었습니다.  
-즉, `ingress-basic` ns와 관련있는 리소스가 남아있으면 안됩니다.
-
-1. `.github.workflows` 디렉터리의 `aks apply service for ingress` 삭제
-1. `k8s` 디렉터리의 `-external.yaml` 시리즈 리소스 삭제
+1. `npm i && npm run start:dev` 를 이용해 nestjs를 시작합니다.
