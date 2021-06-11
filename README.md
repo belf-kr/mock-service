@@ -15,3 +15,11 @@
 # 빠른 시작
 
 1. `npm i && npm run start:dev` 를 이용해 nestjs를 시작합니다.
+
+# 환경 변수
+
+| Variable    | dev | qa/prod | Default | Example                 | Usage                                                                     |
+| ----------- | :-: | :-----: | :-----: | ----------------------- | ------------------------------------------------------------------------- |
+| NODE_ENV    | ✅  |   ✅    |   🤷‍♂️    | development, production | `NodeJS 실행 환경` 을 설정하는 값 nestjs가 실행전에 값이 있어야 합니다.   |
+| STAGES      | 🚫  |   ✅    |   🤷‍♂️    | qa, prod                | `k8s에서` 실행 환경에 맞는 svc를 연결 및 디버깅을 위해 사용되는 값입니다. |
+| SERVER_PORT | ✅  |   🚫    |  3000   | 3000                    | `NodeJS 실행환경` 에서 API 서비스의 Listen port를 설정하기 위한 값입니다. |
