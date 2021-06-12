@@ -1,4 +1,4 @@
-@Host = http://localhost:3000
+@Host = http://localhost:3002
 @Router = todo-service
 
 ### 오늘 하루 todo list 조회
@@ -6,3 +6,6 @@ GET {{Host}}/{{Router}}/today-todos
 
 ### 잔디밭 조회
 GET {{Host}}/{{Router}}/glass
+
+### 잔디밭 조회
+GET {{Host}}/{{Router}}/get-all-colors

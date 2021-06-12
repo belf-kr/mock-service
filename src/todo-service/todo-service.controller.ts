@@ -19,4 +19,9 @@ export class TodoServiceController {
   getPlantingGlass() {
     return this.appService.getPlantingGlass();
   }
+
+  @Get("get-all-colors")
+  getAllColors() {
+    return this.appService.getAllColors();
+  }
 }

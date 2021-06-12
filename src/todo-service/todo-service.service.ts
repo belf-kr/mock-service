@@ -32,6 +32,9 @@ type Todos = {
   todo_list: Todo[];
 };
 
+type Colors = {
+  color_list: string[];
+};
 interface IServiceEndpoint {
   /**
    * 요약정보 가져오기(잔디)
@@ -43,10 +46,19 @@ interface IServiceEndpoint {
    * @param userId
    */
   getTodayTodos(userId: string): Promise<Todos>;
+
+  getAllColors(): Promise<Colors>;
 }
 
 @Injectable()
 export class TodoServiceService implements IServiceEndpoint {
+  async getAllColors(): Promise<Colors> {
+    const colors: Colors = { color_list: [] };
+    for (let index = 0; index < 10; index++) {
+      colors.color_list.push(randomColor());
+    }
+    return colors;
+  }
   async getPlantingGlass(): Promise<Glasses> {
     const result: Glass[] = [];
     const now = new Date();
