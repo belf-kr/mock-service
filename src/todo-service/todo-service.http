@@ -7,5 +7,5 @@ GET {{Host}}/{{Router}}/today-todos
 ### 잔디밭 조회
 GET {{Host}}/{{Router}}/glass
 
-### 잔디밭 조회
-GET {{Host}}/{{Router}}/get-all-colors
+### 색상 전체 조회
+GET {{Host}}/{{Router}}/colors
