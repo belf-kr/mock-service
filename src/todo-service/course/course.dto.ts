@@ -1,6 +1,6 @@
 import { CourseType } from "./course.type";
 
-import { TagType } from "../tag/tag.type";
+import { TagDto } from "../tag/tag.dto";
 
 export class CourseDto implements CourseType {
   constructor(
@@ -13,7 +13,7 @@ export class CourseDto implements CourseType {
     explanation: string,
     title: string,
     likeCount = 0,
-    tags: TagType[]
+    tags: TagDto[]
   ) {
     this.id = id;
     this.originalCourseId = originalCourseId;
@@ -28,13 +28,22 @@ export class CourseDto implements CourseType {
   }
 
   id: number;
+
   originalCourseId: number;
+
   color: string;
+
   creatorId: number;
+
   startDate: Date;
+
   endDate: Date;
+
   explanation: string;
+
   title: string;
+
   likeCount: number;
-  tags: TagType[];
+
+  tags: TagDto[];
 }
