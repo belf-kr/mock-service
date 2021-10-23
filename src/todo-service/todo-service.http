@@ -1,8 +1,11 @@
-@Host = http://localhost:3000
-@Router = todo-service
+@Host = http://localhost:3002
+@Router = mock
 
 ### 오늘 하루 todo list 조회
 GET {{Host}}/{{Router}}/today-todos
 
 ### 잔디밭 조회
 GET {{Host}}/{{Router}}/glass
+
+### 색상 전체 조회
+GET {{Host}}/{{Router}}/colors
