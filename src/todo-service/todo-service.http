@@ -1,5 +1,5 @@
 @Host = http://localhost:3002
-@Router = todo-service
+@Router = mock
 
 ### 오늘 하루 todo list 조회
 GET {{Host}}/{{Router}}/today-todos
