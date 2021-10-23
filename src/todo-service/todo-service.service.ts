@@ -32,21 +32,8 @@ type Todos = {
   todo_list: Todo[];
 };
 
-interface IServiceEndpoint {
-  /**
-   * 요약정보 가져오기(잔디)
-   * @param userId
-   */
-  getPlantingGlass(userId: string): Promise<Glasses>;
-  /**
-   * 오늘 할 일 가져오기
-   * @param userId
-   */
-  getTodayTodos(userId: string): Promise<Todos>;
-}
-
 @Injectable()
-export class TodoServiceService implements IServiceEndpoint {
+export class TodoServiceService {
   async getPlantingGlass(): Promise<Glasses> {
     const result: Glass[] = [];
     const now = new Date();
