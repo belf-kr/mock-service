@@ -16,7 +16,7 @@ import AppConfig from "./config/app.config";
       ignoreEnvFile: process.env.NODE_ENV === "production",
       envFilePath: process.env.NODE_ENV === "development" ? ".env.dev" : "",
       validationSchema: Joi.object({
-        SERVER_PORT: Joi.number().default(3000),
+        MOCK_SERVICE_SERVER_PORT: Joi.number().default(3000),
       }),
     }),
     TodoServiceModule,
