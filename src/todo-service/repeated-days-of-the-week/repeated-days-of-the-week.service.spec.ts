@@ -1,4 +1,5 @@
 import { Test, TestingModule } from "@nestjs/testing";
+
 import { RepeatedDaysOfTheWeekService } from "./repeated-days-of-the-week.service";
 
 describe("RepeatedDaysOfTheWeekService", () => {
