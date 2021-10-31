@@ -1,4 +1,5 @@
 import { Test, TestingModule } from "@nestjs/testing";
+
 import { CourseTagService } from "./course-tag.service";
 
 describe("CourseTagService", () => {
