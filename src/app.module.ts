@@ -1,11 +1,14 @@
 import { Module } from "@nestjs/common";
 import { ConfigModule } from "@nestjs/config";
+import { APP_INTERCEPTOR } from "@nestjs/core";
 import Joi = require("joi");
 
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
-import { TodoServiceModule } from "./todo-service/todo-service.module";
+
 import AppConfig from "./config/app.config";
+import { LoggingInterceptor } from "./interceptor/logging.interceptor";
+import { TodoServiceModule } from "./todo-service/todo-service.module";
 
 @Module({
   imports: [
@@ -22,6 +25,12 @@ import AppConfig from "./config/app.config";
     TodoServiceModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: APP_INTERCEPTOR,
+      useClass: LoggingInterceptor,
+    },
+  ],
 })
 export class AppModule {}
