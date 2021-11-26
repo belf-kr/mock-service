@@ -1,0 +1,12 @@
+# 로컬 테스트용 파일입니다.
+version: "3.8"
+services:
+  mock-service:
+    build:
+      context: "./"
+      dockerfile: Dockerfile
+    image: "jp3pe/belf-kr/mock-service"
+    container_name: "belf-mock-service"
+    ports:
+      - "3002:3000"
+      
