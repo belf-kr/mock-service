@@ -1,5 +1,29 @@
 # mock-service
 
+## 빠른 시작
+
+### 컨테이너 생성
+
+```
+docker-compose up -d
+```
+
+위의 명령어를 입력해 docker image 생성 후 컨테이너를 생성합니다.
+
+### 컨테이너 삭제
+
+```
+docker-compose down
+```
+
+위의 명령어를 입력해 컨테이너를 삭제합니다.
+
+### API 요청
+
+#### ping
+
+http://localhost:3002/ping
+
 ## 개요
 
 미완성된 service를 대신하여 더미 데이터를 제공합니다.
@@ -14,19 +38,16 @@
 1. node:v14.16.1
 1. npm
 1. nest.js
-1. docker
 1. vscode
 
-## 빠른 시작
+## 시작하기
 
-`docker-compose up -d` 명령어를 입력해 Docker container를 실행합니다.
-
-## 개발 환경
+### 개발 환경
 
 1. .env.dev 파일에 특이사항이 있는 경우 수정합니다.
 1. VSCode 디버그 창 내부에 있는 NestJS start 버튼을 눌러 시작합니다.
 
-## QA/production 환경
+### QA/production 환경
 
 1. README.md 파일 내 환경변수 표를 참고해 자신의 서버 환경에 알맞은 OS 환경변수를 설정합니다.
 1. `npm i && npm run start:prod` 명령을 이용해서 mock service를 시작합니다.
