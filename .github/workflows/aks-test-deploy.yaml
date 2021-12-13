@@ -56,3 +56,4 @@ jobs:
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_MESSAGE: ${{ github.repository }}가 ${{ env.NAMESPACE }} 환경에 배포되었습니다 🚀
